@@ -1,0 +1,41 @@
+
+name: Build and deploy React App to Azure Web App - ajay-frontend-app
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Code checkout
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Node setup
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # 3. Install dependencies (client folder)
+      - name: Install dependencies
+        working-directory: ./client
+        run: npm install
+
+      # 4. Build React app
+      - name: Build React app
+        working-directory: ./client
+        run: npm run build
+
+      # 5. Deploy to Azure
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'ajay-frontend-app'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8B840DDCA3394FFA9A715BD8644AFFD9 }}
+          package: client/build
