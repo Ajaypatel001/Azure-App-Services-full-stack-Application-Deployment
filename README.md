@@ -122,21 +122,26 @@ jobs:
 
       - name: Deploy Backend
         uses: azure/webapps-deploy@v2
+----
 
 🛢️ Azure MySQL Database Setup
+
 Service: Azure Database for MySQL (Flexible Server)
 Version: MySQL 8.0
 Enable Public Access
 Allow Azure Services
+
 🔌 Backend Configuration
 
-Add environment variables in Azure:
+📌 Environment Variables
 
 DB_HOST=your_host
 DB_USERNAME=your_username
 DB_PASSWORD=your_password
 DB_NAME=your_db
-Node.js Connection
+
+
+📌 Node.js Connection
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
@@ -148,10 +153,13 @@ const db = mysql.createConnection({
 🔗 Frontend → Backend Connection
 const API_URL = "https://your-backend-url.azurewebsites.net";
 🧪 Testing
-Backend API
+🔹 Backend API
 
 https://your-backend-url.azurewebsites.net/books
 
+🔹 Frontend App
+
+https://your-frontend-url.azurewebsites.net
 Frontend App
 
 https://your-frontend-url.azurewebsites.net
