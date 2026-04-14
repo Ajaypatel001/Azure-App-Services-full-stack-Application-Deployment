@@ -92,6 +92,8 @@ build-and-deploy:
 
    - name: Deploy
      uses: azure/webapps-deploy@v2
+
+
 Backend Workflow
 name: Deploy Backend
 
@@ -115,7 +117,10 @@ jobs:
 
       - name: Deploy Backend
         uses: azure/webapps-deploy@v2
+
+
 🛢️ Azure MySQL Database Setup
+
 Service: Azure Database for MySQL (Flexible Server)
 Version: MySQL 8.0
 Enable Public Access
@@ -129,6 +134,7 @@ DB_USERNAME=your_username
 DB_PASSWORD=your_password
 DB_NAME=your_db
 Node.js Connection
+
 const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USERNAME,
@@ -137,10 +143,15 @@ const db = mysql.createConnection({
   port: 3306,
   ssl: { rejectUnauthorized: false },
 });
+
 🔗 Frontend → Backend Connection
 const API_URL = "https://your-backend-url.azurewebsites.net";
+
+
 🧪 Testing
+
 Backend API:
 https://your-backend-url.azurewebsites.net/books
+
 Frontend App:
 https://your-frontend-url.azurewebsites.net
