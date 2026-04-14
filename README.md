@@ -20,7 +20,9 @@ This project is a **Full Stack Web Application** built using:
 
 
 root/
+
 ├── client # React Frontend
+
 ├── backend # Node.js API
 
 
