@@ -63,11 +63,11 @@ AZURE_BACKEND_PROFILE
 
 ---
 
-## 🔄 GitHub Actions (CI/CD)
+# 🔄 GitHub Actions (CI/CD)
 
 ---
 
-### 🌐 Frontend Workflow
+# 🌐 Frontend Deployment Workflow
 
 ```yaml
 name: Deploy Frontend
@@ -95,7 +95,10 @@ jobs:
 
       - name: Deploy
         uses: azure/webapps-deploy@v2
-⚙️ Backend Workflow
+
+--
+
+# 🌐 Backend Workflow
 name: Deploy Backend
 
 on:
