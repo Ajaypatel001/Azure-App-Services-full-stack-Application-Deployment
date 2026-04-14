@@ -95,30 +95,8 @@ jobs:
 
       - name: Deploy
         uses: azure/webapps-deploy@v2
-⚙️ Backend Workflow
-name: Deploy Backend
 
-on:
-  push:
-    branches: [ main ]
 
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
-
-      - name: Install dependencies
-        working-directory: ./backend
-        run: npm install
-
-      - name: Deploy Backend
-        uses: azure/webapps-deploy@v2
 🛢️ Azure MySQL Database Setup
 Service: Azure Database for MySQL (Flexible Server)
 Version: MySQL 8.0
